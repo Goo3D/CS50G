@@ -1,4 +1,4 @@
--- GD50 Pong Remake
+-- GD50 Pong Remake V-00
 
 
 -- Declaraciones simbolicas
