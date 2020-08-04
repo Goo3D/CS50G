@@ -1,7 +1,7 @@
--- GD50 Pong Remake V-02
+-- GD50 Pong Remake V-03
 -- Adding a new TextFont
 -- Adding Paddles and ball
-
+-- Adding Keyboard control
 
 
 -- Declaraciones simbolicas
@@ -9,7 +9,7 @@ WINDOW_WIDTH = 1280  -- Tamaño de la ventana
 WINDOW_HEIGHT = 720
 VIRTUAL_WIDTH = 432  -- Tamaño virtual de la ventana
 VIRTUAL_HEIGHT = 243
-PADDLE_SPEED = 200 -- Velocidad de las palas
+PADDLE_SPEED = 400 -- Velocidad de las palas
 
 -- push is a library that will allow us to draw our game at a virtual
 -- resolution, instead of however large our window is; used to provide
@@ -125,11 +125,12 @@ function love.draw()
 
 
 
-  -- paddles and ball are simply rectangles we draw on the screen.
-
-  love.graphics.rectangle('fill', 10, 30, 5, 20)  -- first paddle (left side)
-  love.graphics.rectangle('fill', VIRTUAL_WIDTH - 10, VIRTUAL_HEIGHT - 50, 5, 20)  -- second paddle (right side)
-  love.graphics.rectangle('fill', VIRTUAL_WIDTH / 2 - 2, VIRTUAL_HEIGHT / 2 - 2, 4, 4)  -- ball (center)
+-- First paddle (Left side)
+  love.graphics.rectangle('fill', 10, player1Y, 5, 20)
+-- Seccond paddle (right side)
+  love.graphics.rectangle('fill', VIRTUAL_WIDTH - 10, player2Y, 5, 20)
+-- ball (center)
+  love.graphics.rectangle('fill', VIRTUAL_WIDTH / 2 - 2, VIRTUAL_HEIGHT / 2 - 2, 4, 4)
 
 
   push:apply('end')  -- end rendering at virtual resolution
